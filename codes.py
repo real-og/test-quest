@@ -1,0 +1,1 @@
+GLASSES_CODE = 'rainbow'

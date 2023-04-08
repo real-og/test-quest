@@ -4,6 +4,8 @@ from aiogram.types import ReplyKeyboardRemove, \
 
 from typing import List
 
+import texts
+
 def get_code_keyboard(selected: List[int]):
     kb = InlineKeyboardMarkup()
     button_1 = InlineKeyboardButton(text='☑️1️⃣' if 1 in selected else '1️⃣', callback_data='1')
@@ -19,3 +21,15 @@ def get_code_keyboard(selected: List[int]):
     kb.row(button_4, button_5, button_6)
     kb.row(button_7, button_8, button_9)
     return kb
+
+look_around = ReplyKeyboardMarkup([[texts.look_around]], resize_keyboard=True)
+
+actions_first_room = ReplyKeyboardMarkup([[texts.go_first_door, texts.go_second_door]], resize_keyboard=True)
+
+colors = [texts.red,
+          texts.orange,
+          texts.yellow,
+          texts.green,
+          texts.blue,
+          texts.black]
+color_glass = ReplyKeyboardMarkup([colors, [texts.enter_code, texts.back]], resize_keyboard=True)
