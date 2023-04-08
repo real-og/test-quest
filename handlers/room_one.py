@@ -15,5 +15,9 @@ async def watch_around(message: types.Message):
 @dp.message_handler(state=State.first_room_looked)
 async def watch_around(message: types.Message):
     if message.text == texts.go_first_door:
-        await message.answer(texts.seeing_first_door, reply_markup=kb.color_glass)
+        with open('images/purple.jpeg', 'rb') as img:
+            await message.answer_photo(photo=img,
+                                       caption=texts.seeing_first_door,
+                                       reply_markup=kb.color_glass
+                                       )
         await State.first_door.set()

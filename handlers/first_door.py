@@ -22,8 +22,16 @@ async def func(message: types.Message):
     if message.text == GLASSES_CODE:
         await message.answer(texts.glass_room)
         await State.glass_room.set()
+    elif message.text == texts.back:
+        with open('images/purple.jpeg', 'rb') as img:
+            await message.answer_photo(photo=img,
+                                       caption=texts.seeing_first_door,
+                                       reply_markup=kb.color_glass
+                                       )
+        await State.first_door.set()
     else:
         await message.answer(texts.wrong_code)
+
 
 
 
