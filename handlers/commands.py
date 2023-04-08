@@ -13,7 +13,8 @@ async def send_help(message: types.Message):
     await message.answer(texts.help)
 
 @dp.message_handler(commands=['start'], state="*")
-async def send_welcome(message: types.Message):
+async def send_welcome(message: types.Message, state: FSMContext):
+    await state.update_data(selected_lenses=[])
     await message.answer(texts.greeting, reply_markup=kb.look_around)
     await State.first_room_dark.set()
 
