@@ -27,7 +27,6 @@ look_around = ReplyKeyboardMarkup([[texts.look_around]], resize_keyboard=True)
 actions_first_room = ReplyKeyboardMarkup([[texts.go_first_door, texts.go_second_door]], resize_keyboard=True)
 
 colors = [texts.red,
-          texts.orange,
           texts.yellow,
           texts.green,
           texts.blue,

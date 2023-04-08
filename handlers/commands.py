@@ -15,7 +15,7 @@ async def send_help(message: types.Message):
 @dp.message_handler(commands=['start'], state="*")
 async def send_welcome(message: types.Message):
     await message.answer(texts.greeting, reply_markup=kb.look_around)
-    await State.start_entry.set()
+    await State.first_room_dark.set()
 
 
 

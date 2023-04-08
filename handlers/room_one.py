@@ -6,7 +6,7 @@ from loader import dp, bot
 import keyboards as kb
 
 
-@dp.message_handler(state=State.start_entry)
+@dp.message_handler(state=State.first_room_dark)
 async def watch_around(message: types.Message):
     if message.text == texts.look_around:
         await message.answer(texts.around_first_room, reply_markup=kb.actions_first_room)
@@ -21,3 +21,7 @@ async def watch_around(message: types.Message):
                                        reply_markup=kb.color_glass
                                        )
         await State.first_door.set()
+    elif message.text == texts.go_second_door:
+        await message.answer(texts.around_first_room, reply_markup=kb.actions_first_room)
+        await State.second_door.set()
+
