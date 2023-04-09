@@ -13,3 +13,19 @@ class State(StatesGroup):
     computer_room = State()
     at_computer = State()
     game_start = State()
+
+    trapped_s = State()
+    barrel_s = State()
+    friend_s = State()
+    note_s = State()
+    beach_s = State()
+    boat_s = State()
+    congrats_s = State()
+    light_note_s = State()
+
+    alarm_one = State()
+    alarm_three = State()
+    alarm_two = State()
+    alarm_four = State()
+
+    freedom = State()

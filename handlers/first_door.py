@@ -34,7 +34,7 @@ async def func(message: types.Message, state:FSMContext):
 @dp.message_handler(state=State.receiving_code)
 async def func(message: types.Message, state:FSMContext):
     if message.text == GLASSES_CODE:
-        await message.answer(texts.glass_room)
+        await message.answer(texts.glass_room, reply_markup=kb.glass_room)
         await State.glass_room.set()
     elif message.text == texts.back:
         data = await state.get_data()

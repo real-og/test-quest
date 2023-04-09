@@ -6,6 +6,7 @@ from loader import dp, bot
 import keyboards as kb
 from codes import GLASSES_CODE, PROPER_BOX
 from side_info import file_by_col
+from keyboards_robot import trapped_kb
 
 @dp.message_handler(state=State.computer_room)
 async def func(message: types.Message, state:FSMContext):
@@ -22,5 +23,7 @@ async def func(message: types.Message, state:FSMContext):
         await message.answer(texts.computer_room, reply_markup=kb.computer_room)
         await State.computer_room.set()
     elif message.text == texts.play:
-        await message.answer('начало')
-        await State.game_start.set()
+        await message.answer_photo(photo=types.InputFile('images_robot/trapped.jpg'),
+                            caption=texts.trapped,
+                            reply_markup=trapped_kb)
+        await State.trapped_s.set()

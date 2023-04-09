@@ -53,3 +53,7 @@ locker_boxes = ReplyKeyboardMarkup([texts.boxes, [texts.back]], resize_keyboard=
 computer_room = ReplyKeyboardMarkup([[texts.sit_at_comp], [texts.back]], resize_keyboard=True)
 
 at_computer = ReplyKeyboardMarkup([[texts.play], [texts.back]], resize_keyboard=True)
+
+alarm_one = ReplyKeyboardMarkup([[texts.run, texts.duck, texts.jump]], resize_keyboard=True)
+
+glass_room = ReplyKeyboardMarkup([[texts.leave]], resize_keyboard=True)
