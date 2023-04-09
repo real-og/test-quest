@@ -44,3 +44,7 @@ colors = [texts.red,
 color_glass = ReplyKeyboardMarkup([colors, [texts.enter_code, texts.back]], resize_keyboard=True)
 
 back_kb = ReplyKeyboardMarkup([[texts.back]], resize_keyboard=True)
+
+second_door = ReplyKeyboardMarkup([[texts.enter_code, texts.check_locker], [texts.back]], resize_keyboard=True)
+
+locker_boxes = ReplyKeyboardMarkup([texts.boxes, [texts.back]], resize_keyboard=True)

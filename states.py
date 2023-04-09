@@ -8,3 +8,5 @@ class State(StatesGroup):
     second_door = State()
     receiving_code = State()
     glass_room = State()
+    checking_locker = State()
+    receiving_number_code = State()
