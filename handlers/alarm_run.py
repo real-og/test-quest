@@ -2,11 +2,8 @@ from aiogram import types
 from aiogram.dispatcher import FSMContext
 from states import State
 import texts
-from loader import dp, bot
+from loader import dp
 import keyboards as kb
-from codes import GLASSES_CODE, PROPER_BOX
-from side_info import file_by_col
-from keyboards_robot import trapped_kb
 import asyncio
 
 @dp.message_handler(state=State.alarm_one)
