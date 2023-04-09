@@ -32,3 +32,5 @@ colors = [texts.red,
           texts.blue,
           texts.black]
 color_glass = ReplyKeyboardMarkup([colors, [texts.enter_code, texts.back]], resize_keyboard=True)
+
+back_kb = ReplyKeyboardMarkup([[texts.back]], resize_keyboard=True)
