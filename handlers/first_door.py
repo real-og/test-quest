@@ -9,6 +9,7 @@ from side_info import file_by_col
 
 @dp.message_handler(state=State.first_door)
 async def func(message: types.Message, state:FSMContext):
+    tapped_color = message.text.replace('✅', '').strip()
     if message.text == texts.back:
         await message.answer(texts.around_first_room, reply_markup=kb.actions_first_room)
         await State.first_room_looked.set()
@@ -16,17 +17,17 @@ async def func(message: types.Message, state:FSMContext):
         await message.answer(texts.enter_code, reply_markup=kb.back_kb)
         await State.receiving_code.set()
 
-    elif message.text in texts.colors:
+    elif tapped_color in texts.colors:
         data = await state.get_data()
         lenses = data.get('selected_lenses')
-        if message.text in lenses:
-            lenses.remove(message.text)
+        if tapped_color in lenses:
+            lenses.remove(tapped_color)
         elif len(lenses) < 2:
-            lenses.append(message.text)
+            lenses.append(tapped_color)
         file_img_name = 'images/' + file_by_col[''.join(lenses)]
         await state.update_data(selected_lenses=lenses)
         with open(file_img_name, 'rb') as file:
-            await message.answer_photo(file)
+            await message.answer_photo(file, reply_markup=kb.get_glass_kb(lenses))
 
 
 
@@ -42,7 +43,7 @@ async def func(message: types.Message, state:FSMContext):
         with open(file_img_name, 'rb') as file:
             await message.answer_photo(photo=file,
                                        caption=texts.seeing_first_door,
-                                       reply_markup=kb.color_glass
+                                       reply_markup=kb.get_glass_kb(lenses)
                                        )
         await State.first_door.set()
     else:

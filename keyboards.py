@@ -6,6 +6,16 @@ from typing import List
 
 import texts
 
+def get_glass_kb(selected):
+    colors = [texts.red,
+          texts.yellow,
+          texts.green,
+          texts.blue,
+          texts.black]
+    for color in selected:
+        colors[colors.index(color)] += '✅'
+    return ReplyKeyboardMarkup([colors, [texts.enter_code, texts.back]], resize_keyboard=True)
+
 def get_code_keyboard(selected: List[int]):
     kb = InlineKeyboardMarkup()
     button_1 = InlineKeyboardButton(text='☑️1️⃣' if 1 in selected else '1️⃣', callback_data='1')
