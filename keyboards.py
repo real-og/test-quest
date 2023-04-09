@@ -7,11 +7,11 @@ from typing import List
 import texts
 
 def get_glass_kb(selected):
-    colors = [texts.red,
+    colors = [texts.black,
           texts.yellow,
           texts.green,
           texts.blue,
-          texts.black]
+          texts.red]
     for color in selected:
         colors[colors.index(color)] += '✅'
     return ReplyKeyboardMarkup([colors, [texts.enter_code, texts.back]], resize_keyboard=True)

@@ -28,7 +28,9 @@ async def func(message: types.Message, state:FSMContext):
         await State.second_door.set()
     elif message.text in texts.boxes:
         if message.text == PROPER_BOX:
-            await message.answer(texts.note_to_random_code, reply_markup=kb.locker_boxes)
+            data = await state.get_data()
+            first_num = data.get('code')[0]
+            await message.answer(texts.generate_note(first_num), reply_markup=kb.locker_boxes)
         else:
             await message.answer(texts.garbage_found, reply_markup=kb.locker_boxes)
 
