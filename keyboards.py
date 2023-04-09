@@ -49,3 +49,7 @@ back_kb = ReplyKeyboardMarkup([[texts.back]], resize_keyboard=True)
 second_door = ReplyKeyboardMarkup([[texts.enter_code, texts.check_locker], [texts.back]], resize_keyboard=True)
 
 locker_boxes = ReplyKeyboardMarkup([texts.boxes, [texts.back]], resize_keyboard=True)
+
+computer_room = ReplyKeyboardMarkup([[texts.sit_at_comp], [texts.back]], resize_keyboard=True)
+
+at_computer = ReplyKeyboardMarkup([[texts.play], [texts.back]], resize_keyboard=True)

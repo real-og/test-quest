@@ -56,8 +56,9 @@ async def send_series(callback: types.CallbackQuery, state: FSMContext):
         except:
             pass
         if selected == code:
+            selected = []
             await State.computer_room.set()
-            await callback.message.answer('3')
+            await callback.message.answer(texts.computer_room, reply_markup=kb.computer_room)
 
         await state.update_data(selected_digits=selected) 
     await bot.answer_callback_query(callback.id)

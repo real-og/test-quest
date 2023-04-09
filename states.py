@@ -11,3 +11,5 @@ class State(StatesGroup):
     checking_locker = State()
     receiving_number_code = State()
     computer_room = State()
+    at_computer = State()
+    game_start = State()

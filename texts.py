@@ -15,6 +15,10 @@ seeing_locker = 'you see locker with 5 boxes'
 note_to_random_code = 'Код : 4......\nДальше не видно. всего 5 цифр, не повторяются, если не угадал сбрасывается'
 garbage_found = 'some trash'
 
+computer_room = 'you see comp'
+
+seeing_game = 'you see mr robot game'
+
 
 
 
@@ -36,3 +40,7 @@ colors = [red, yellow, green, blue, black]
 check_locker = 'check locker'
 
 boxes = ['🗄1️⃣', '🗄2️⃣', '🗄3️⃣', '🗄4️⃣', '🗄5️⃣']
+
+sit_at_comp = 'sit'
+
+play = 'play'
