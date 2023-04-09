@@ -6,7 +6,7 @@ from states import State
 import texts
 from loader import dp, bot
 import keyboards as kb
-
+import random
 
 @dp.message_handler(commands=['help'], state="*")
 async def send_help(message: types.Message):
@@ -14,7 +14,12 @@ async def send_help(message: types.Message):
 
 @dp.message_handler(commands=['start'], state="*")
 async def send_welcome(message: types.Message, state: FSMContext):
-    await state.update_data(selected_lenses=[])
+    target_code = random.sample(range(1, 10), 5)
+    await state.update_data(selected_lenses=[],
+                            selected_digits=[],
+                            code=target_code
+                            )
+    print(target_code)
     await message.answer(texts.greeting, reply_markup=kb.look_around)
     await State.first_room_dark.set()
 

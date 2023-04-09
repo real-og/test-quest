@@ -13,7 +13,9 @@ async def func(message: types.Message, state:FSMContext):
         await message.answer(texts.around_first_room, reply_markup=kb.actions_first_room)
         await State.first_room_looked.set()
     elif message.text == texts.enter_code:
-        await message.answer(texts.enter_code, reply_markup=kb.back_kb)
+        data = await state.get_data()
+        selected = data.get('selected_digits')
+        await message.answer(texts.enter_code, reply_markup=kb.get_code_keyboard(selected))
         await State.receiving_number_code.set()
     elif message.text == texts.check_locker:
         await message.answer(texts.seeing_locker, reply_markup=kb.locker_boxes)
@@ -31,4 +33,31 @@ async def func(message: types.Message, state:FSMContext):
             await message.answer(texts.garbage_found, reply_markup=kb.locker_boxes)
 
 
+@dp.callback_query_handler(state=State.receiving_number_code)
+async def send_series(callback: types.CallbackQuery, state: FSMContext):
+    if callback.data == 'back':
+        await callback.message.answer(texts.seeing_second_door, reply_markup=kb.second_door)
+        await State.second_door.set()
+    else:
+        tapped_num = int(callback.data)
+        data = await state.get_data()
+        selected = data.get('selected_digits')
+        code = data.get('code')
+        position = len(selected)
 
+        if code[position] == tapped_num:
+            selected.append(tapped_num)
+        else:
+            selected = []
+        try:
+            await bot.edit_message_reply_markup(callback.message.chat.id,
+                                callback.message.message_id,
+                                reply_markup=kb.get_code_keyboard(selected))
+        except:
+            pass
+        if selected == code:
+            await State.computer_room.set()
+            await callback.message.answer('3')
+
+        await state.update_data(selected_digits=selected) 
+    await bot.answer_callback_query(callback.id)

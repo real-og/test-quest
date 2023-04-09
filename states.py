@@ -10,3 +10,4 @@ class State(StatesGroup):
     glass_room = State()
     checking_locker = State()
     receiving_number_code = State()
+    computer_room = State()
