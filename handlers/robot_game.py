@@ -19,12 +19,12 @@ import asyncio
 @dp.message_handler(state=State.trapped_s)
 async def get_barrel(message: types.Message):
     input = message.text
-    if input == 'Подвинуть бочку':
+    if input == 'Move barrel':
         await message.answer_photo(photo=types.InputFile('images_robot/barrel.jpg'),
                                     caption=texts.barrel,
                                     reply_markup=barrel_kb)
         await State.barrel_s.set()
-    elif input == 'Сесть рядом с другом':
+    elif input == 'Sit next to the friend':
         await message.answer_photo(photo=types.InputFile('images_robot/darknote.jpg'),
                                     caption=texts.dark_friend,
                                     reply_markup=friend_kb)
@@ -36,7 +36,7 @@ async def get_barrel(message: types.Message):
 @dp.message_handler(state=State.barrel_s)
 async def get_friend(message: types.Message):
     input = message.text
-    if input == 'Войти в туннель':
+    if input == 'Enter the tunnel':
         await message.answer_photo(photo=types.InputFile('images_robot/friend.jpg'),
                                     caption=texts.friend,
                                     reply_markup=friend_kb)
@@ -48,12 +48,12 @@ async def get_friend(message: types.Message):
 @dp.message_handler(state=State.friend_s)
 async def get_note(message: types.Message):
     input = message.text
-    if input == 'Прочесть записку':
+    if input == 'Read the note':
         await message.answer_photo(photo=types.InputFile('images_robot/note.jpg'),
                                     caption=texts.note,
                                     reply_markup=note_kb)
         await State.note_s.set()
-    elif input == 'Зажечь спичку':
+    elif input == 'Light a match':
         await message.answer_photo(photo=types.InputFile('images_robot/dontleave.jpg'),
                                     caption=texts.light_note,
                                     reply_markup=light_note_kb)
@@ -73,7 +73,7 @@ async def reset_to_start(message: types.Message, state: FSMContext):
 @dp.message_handler(state=State.light_note_s)
 async def get_congrats(message: types.Message, state: FSMContext):
     input = message.text
-    if input == 'Остаться':
+    if input == 'Stay with the friend':
         await message.answer_photo(photo=types.InputFile('images_robot/end.png'),
                                     reply_markup=congrats_kb)
         await message.answer(texts.ending, reply_markup=kb.alarm_one)
@@ -87,7 +87,7 @@ async def get_congrats(message: types.Message, state: FSMContext):
         await message.answer(texts.alarm_warning, reply_markup=kb.alarm_one)
         await State.alarm_one.set()
 
-    elif input == 'Уйти':
+    elif input == 'Leave':
         await(get_beach(message))
     else:
         await message.answer(texts.default_ans, reply_markup=light_note_kb)
@@ -96,7 +96,7 @@ async def get_congrats(message: types.Message, state: FSMContext):
 @dp.message_handler(state=State.note_s)
 async def get_beach(message: types.Message):
     input = message.text
-    if input == 'Уйти':
+    if input == 'Leave':
         await message.answer_photo(photo=types.InputFile('images_robot/beach.jpg'),
                                     caption=texts.beach,
                                     reply_markup=beach_kb)
@@ -108,7 +108,7 @@ async def get_beach(message: types.Message):
 @dp.message_handler(state=State.beach_s)
 async def get_boat(message: types.Message):
     input = message.text
-    if input == 'Изучить':
+    if input == 'Look around':
         await message.answer_photo(photo=types.InputFile('images_robot/boat.jpg'),
                                     caption=texts.boat,
                                     reply_markup=boat_kb)
@@ -120,7 +120,7 @@ async def get_boat(message: types.Message):
 @dp.message_handler(state=State.boat_s)
 async def get_congrats(message: types.Message):
     input = message.text
-    if input == 'Взайти на судно':
+    if input == 'Board the ship':
         await message.answer_photo(photo=types.InputFile('images_robot/congrats.jpg'),
                                     caption=texts.congrats,
                                     reply_markup=congrats_kb)
@@ -131,7 +131,7 @@ async def get_congrats(message: types.Message):
 
 @dp.message_handler(state=State.congrats_s)
 async def get_menu(message: types.Message):
-    if message.text == 'Да':
+    if message.text == 'Yes':
         await message.answer_photo(photo=types.InputFile('images_robot/trapped.jpg'),
                             caption=texts.trapped,
                             reply_markup=trapped_kb)

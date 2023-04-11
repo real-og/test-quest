@@ -1,6 +1,6 @@
-greeting = 'Ты открываешь глаза. Тёмное помещение. Пахнет железом. Болит голова.'
+greeting = 'You open your eyes. Dark room. Metallic smell. Нeadache.'
 
-help = 'Цель игры - покинуть странное помещение\n\n/start - чтобы начать новую игру\n\n@bot_dealla - связь'
+help = 'The objective is to leave the strange building\n\n/start - begin new run\n\n@bot_dealla - partnership'
 
 around_first_room = 'Глаза привыкли. На полу несколько стёклышек разных цветов. Подобрал. Вижу 2 двери.'
 
