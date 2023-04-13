@@ -2,48 +2,48 @@ greeting = 'You open your eyes. Dark room. Metallic smell. Нeadache.'
 
 help = 'The objective is to leave the strange building\n\n/start - begin new run\n\n@bot_dealla - partnership'
 
-around_first_room = 'Глаза привыкли. На полу несколько стёклышек разных цветов. Подобрал. Вижу 2 двери.'
+around_first_room = 'Eyes adjusted. There are several pieces of glass of different colors on the floor. Picked them up\nSee two doors'
 
-seeing_first_door = 'Железная дверь, отливающая <b>фиолетовым</b>. Есть поле для ввода кода, а правее - линза, в которую можно вставить не больше 2 стёкол.'
-seeing_second_door = 'Железная дверь с панелью, похожей на домофон'
+seeing_first_door = 'A metal door glistening <b>purple</b>. There is a field to insert a code and a lens-mechanism into which no more than 2 glasses can be inserted.'
+seeing_second_door = 'Metal door with digital panel'
 
-glass_room = 'Красивая комната. Стены из толстого стекла. На улице лес. Дверей нет.'
+glass_room = 'Beautiful room. The walls are made of thick glass. There is a forest outside. There are no doors. Obviously deadend.'
 
-wrong_code = 'Неверный пароль'
-seeing_locker = 'Ты видишь 5 ящичков'
+wrong_code = 'Wrong password'
+seeing_locker = 'You see 5 lockers'
 
 def generate_note(first_num):
-    note_to_random_code = f"""<b>Записка</b>
+    note_to_random_code = f"""<b>None</b>
 
-<code>Код : {first_num}......</code>
+<code>Code : {first_num}......</code>
 
-Дальше стёрто, видно что было всего пять цифр, а первая - {first_num}
+Then unreadable. looks like 5 numbers in the code, and the first one is - {first_num}
 
-<code>...в случае утери кода, его можно подобрать. Нажимая на верную цифру, она загорается. Если не угадать, весь код сбрасывается, однако заново не генерируется. Цифры не повторяются</code>"""
+<code>...in case of loss of the code, you may find it out by the selection method. Clicking on the correct number, it activates. If you do not guess, the entire code is reset, but it is not generated again. The numbers are not repeated</code>"""
     return note_to_random_code
 
 
-garbage_found = 'Какой-то мусор...'
+garbage_found = 'Some garbage...'
 
-computer_room = 'Комната. Посередине старый компьютер.\n\n<i>Что-то из последних серий Mr Robot</i>'
+computer_room = 'A room. Old computer is in the middle.\n\n<i>something like Mr Robot</i>'
 
-seeing_game = 'Открывается игра, в которой действия вводятся текстом.'
+seeing_game = 'A game pops up.'
 
-alarm_warning = 'В конце комнаты открылась дверь.\nЭлектричество пропало! Начинает пищать серена эвакуации.\n\n<b>У вас 15 секунд покинуть здание!</b>\n\n<b>Беги!</b>'
-alarm_two = 'Палка <b>сверху!</b>'
-alarm_three = '<b>Cнизу</b> пробит пол!'
-alarm_four = '<b>Невысокий</b> ящик!'
-
-
+alarm_warning = 'The electricity is gone! The evacuation siren starts beeping.\n\n<b>You have 15 seconds to leave the building!</b>\n\n<b>Run!</b>'
+alarm_two = 'A beam <b>on top!</b>'
+alarm_three = 'The floor is burning <b>from below!</b>'
+alarm_four = '<b>Small</b> box!'
 
 
 
-look_around = 'Осмотреться'
-go_first_door = 'К первой двери'
-go_second_door = 'Ко второй двери'
-enter_code = 'Ввести код'
 
-back = 'Назад'
+
+look_around = 'Look around'
+go_first_door = 'To the first door'
+go_second_door = 'To the second door'
+enter_code = 'Enter the code'
+
+back = 'Back'
 red = '🔴'
 yellow = '🟡'
 green = '🟢'
@@ -51,18 +51,18 @@ blue = '🔵'
 black = '⚫️'
 colors = [black, yellow, green, blue, red]
 
-check_locker = 'Проверить шкафчик'
+check_locker = 'Check the locker'
 
 boxes = ['🗄1️⃣', '🗄2️⃣', '🗄3️⃣', '🗄4️⃣', '🗄5️⃣']
 
-sit_at_comp = 'Сесть за компьютер'
+sit_at_comp = 'Sit at the computer'
 
-play = 'Играть'
+play = 'Play'
 
 
-default_ans = "Используй предложенные варианты (клавиатура)"
+default_ans = "Use the suggested options (keyboard)"
 
-trapped = "Вы с другом заперты в подземелье.\nВы видите бочку.\nВаши действия?"
+trapped = ""
 barrel = "Бочка откатывается в сторону и вы находите тайный туннель.\nВаши действия?"
 friend = "Вы начинаете выбираться, но вашему другу не хватает сил.\nОн даёт вам записку.\nВаши действия?"
 dark_friend = "Друг даёт вам записку.\nВаши действия?"
