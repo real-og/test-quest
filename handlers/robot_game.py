@@ -19,7 +19,7 @@ import asyncio
 @dp.message_handler(state=State.trapped_s)
 async def get_barrel(message: types.Message):
     input = message.text
-    if input == 'Move barrel':
+    if input == 'Move the barrel':
         await message.answer_photo(photo=types.InputFile('images_robot/barrel.jpg'),
                                     caption=texts.barrel,
                                     reply_markup=barrel_kb)
