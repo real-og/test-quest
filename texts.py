@@ -62,25 +62,25 @@ play = 'Play'
 
 default_ans = "Use the suggested options (keyboard)"
 
-trapped = ""
-barrel = "Бочка откатывается в сторону и вы находите тайный туннель.\nВаши действия?"
-friend = "Вы начинаете выбираться, но вашему другу не хватает сил.\nОн даёт вам записку.\nВаши действия?"
-dark_friend = "Друг даёт вам записку.\nВаши действия?"
-note = "В туннеле слишком темно.\nВаши действия?"
-light_note = """В записке написано:\n"Не бросай меня здесь."\nВы оставите своего друга или останетесь?"""
-beach = "Вы выползаете из туннеля и попадаетет на берег.\nВаши действия?"
-boat = "Вы видите на воде судно.\nВаши действия?"
-congrats = "Поздавляем, вы отправляетесь в новый мир! Хотите сыграть ещё?"
-ending = "Конец.Вы отключаете питание."
+trapped = "You and your friend are locked in a dungeon.\nYou see a barrel.\Your actions?"
+barrel = "The barrel rolls to the side and you find a secret tunnel.\nYour actions?"
+friend = "You start to get out, but your friend does not have enough strength.\nHe gives you a note.\nYour actions?"
+dark_friend = "Friend gives you a note.\nYour actions?"
+note = "Is it too dark in the tunnel. \nYour actions?"
+light_note = """The note says:\n"Don't leave me here."\nWill you leave your friend or will you stay?"""
+beach = "You crawl out of the tunnel and get to the shore.\nYour actions?"
+boat = "You see a ship on the water.\nYour actions?"
+congrats = "Congratulations, you are going to a new world!\nDo you want to play some more?"
+ending = "The end. You turn off the power."
 
-reset = '☠️Слишком поздно!☠️\nУдар в спину. Ноги перестают держать. В глазах темнота......'
+reset = '☠️Too late!☠️\nA hit in the back. The legs stop holding. Darkness in the eyes......'
 
-run = 'Бежать'
-duck = 'Нагнуться'
-jump = 'Прыгнуть'
+run = 'Run'
+duck = 'Duck'
+jump = 'Jump'
 
-stumble = 'Зацепился, потерял 2 секунды'
+stumble = 'Stumbled, lost 2 seconds'
 
-final_speech = """<b>Вы спаслись!</b>\n\n\n<i>Этот квест - дэмо-проект. Если у вас есть идеи, нужны боты, скрипты, сбор информации, ее анализ, автоматизация процессов либо желание внедрить, где это можно новые технологии, включая ИИ - @bot_dealla</i>"""
+final_speech = """<b>You won!</b>\n\n\n<i>This quest is jast a demo. If you have ideas, you need bots, scripts, data collection, analysis, any process automation, using AI - @bot_dealla</i>"""
 
-leave = 'Уйти'
+leave = 'Leave'
